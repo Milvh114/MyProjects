@@ -8,6 +8,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+// import User from './User';
 
 @Entity('blog')
 export default class Blog {
@@ -40,9 +41,9 @@ export default class Blog {
   // @OneToMany(() => Comment, (comment) => comment.post)
   // comments: Comment[]
 
-  @ManyToOne(() => User, (user) => user.)
-  @JoinColumn({ name: 'user_id' })
-  user: User;
+  // @ManyToOne(() => User, (user) => user.blogs)
+  // @JoinColumn({ name: 'user_id' })
+  // user: User;
 
   // @OneToMany(() => Like, (like) => like.post)
   // likes: Like[]

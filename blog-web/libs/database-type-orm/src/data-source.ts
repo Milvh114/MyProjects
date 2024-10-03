@@ -13,13 +13,8 @@ export const dataSource = new DataSource({
   timezone: 'Z',
   charset: 'utf8mb4',
   bigNumberStrings: false,
-  entities: [
-    ...DefaultEntities
-  ],
-  migrations: [
-    ...DefaultMigrations
-  ],
-  subscribers: [],
+  entities: [...DefaultEntities],
+  migrations: [...DefaultMigrations],
   synchronize: false,
   logging: process.env.NODE_ENV !== 'production',
 });
