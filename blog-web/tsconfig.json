@@ -18,8 +18,8 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/database-typeorm": ["libs/database-type-orm/src"],
-      "@app/database-typeorm/*": ["libs/database-type-orm/src/*"]
+      "@app/database-type-orm": ["libs/database-type-orm/src"],
+      "@app/database-type-orm/*": ["libs/database-type-orm/src/*"]
     }
   }
 }
