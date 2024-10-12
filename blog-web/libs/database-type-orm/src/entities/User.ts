@@ -3,11 +3,12 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   // OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-// import Blog from './Blog';
+import blog from './Blog';
 import { CommonStatus } from '../constants/enum';
 
 @Entity('user')
@@ -66,6 +67,6 @@ export default class User {
   @UpdateDateColumn({ name: 'updated_at', type: 'datetime' })
   updatedAt: string;
 
-  // @OneToMany(() => Blog, (blog) => blog.user)
-  // blogs: Blog[];
+  @OneToMany(() => blog, (blog) => blog.user)
+  blogs: blog[];
 }
