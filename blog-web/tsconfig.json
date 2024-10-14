@@ -18,6 +18,7 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+<<<<<<< HEAD
       "@app/database-type-orm": [
         "libs/database-type-orm/src"
       ],
@@ -30,6 +31,10 @@
       "@app/authorization/*": [
         "libs/authorization/src/*"
       ]
+=======
+      "@app/database-typeorm": ["libs/database-type-orm/src"],
+      "@app/database-typeorm/*": ["libs/database-type-orm/src/*"]
+>>>>>>> parent of 6b5f636 (add sign-in and sign-up feature)
     }
   }
 }

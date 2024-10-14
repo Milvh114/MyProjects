@@ -11,7 +11,7 @@ export const dataSource = new DataSource({
   password: process.env.MYSQL_PASS,
   database: process.env.MYSQL_DB,
   timezone: 'Z',
-  charset: 'utf8',
+  charset: 'utf8mb4',
   bigNumberStrings: false,
   entities: [...DefaultEntities],
   migrations: [...DefaultMigrations],
