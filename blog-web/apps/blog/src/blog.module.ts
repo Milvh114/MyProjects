@@ -6,6 +6,7 @@ import { weblogService } from './weblog.service';
 =======
 import { BlogController } from './blog.controller';
 import { BlogService } from './blog.service';
+<<<<<<< HEAD
 >>>>>>> parent of 8b8a788 (add blog feature):blog-web/apps/blog/src/blog.module.ts
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
@@ -31,6 +32,10 @@ import { BlogController } from './blog.controller';
 import { BlogService } from './blog.service';
 
 @Module({
+=======
+
+@Module({
+>>>>>>> parent of 6b5f636 (add sign-in and sign-up feature)
   imports: [],
   controllers: [BlogController],
   providers: [BlogService],
