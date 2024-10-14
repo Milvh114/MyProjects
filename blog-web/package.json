@@ -80,8 +80,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@app/database-typeorm(|/.*)$": "<rootDir>/libs/database-typeorm/src/$1",
-      "^y/authorization(|/.*)$": "<rootDir>/libs/authorization/src/$1"
+      "^@app/database-typeorm(|/.*)$": "<rootDir>/libs/database-typeorm/src/$1"
     }
   }
 }

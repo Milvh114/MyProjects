@@ -19,6 +19,7 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "@app/database-type-orm": [
         "libs/database-type-orm/src"
       ],
@@ -35,6 +36,10 @@
       "@app/database-typeorm": ["libs/database-type-orm/src"],
       "@app/database-typeorm/*": ["libs/database-type-orm/src/*"]
 >>>>>>> parent of 6b5f636 (add sign-in and sign-up feature)
+=======
+      "@app/database-type-orm": ["libs/database-type-orm/src"],
+      "@app/database-type-orm/*": ["libs/database-type-orm/src/*"]
+>>>>>>> parent of 8b8a788 (add blog feature)
     }
   }
 }
