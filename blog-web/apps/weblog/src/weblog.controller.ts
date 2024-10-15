@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { BlogService } from './blog.service';
+import { weblogService } from './weblog.service';
 
 @Controller()
-export class BlogController {
-  constructor(private readonly blogService: BlogService) {}
+export class weblogController {
+  constructor(private readonly blogService: weblogService) {}
 
   @Get()
   getHello(): string {
