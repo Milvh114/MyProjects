@@ -1,22 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/blog/src",
+  "sourceRoot": "apps/weblog/src",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/blog/tsconfig.app.json"
+    "tsConfigPath": "apps/weblog/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/blog",
+  "root": "apps/weblog",
   "projects": {
-    "blog": {
+    "weblog": {
       "type": "application",
-      "root": "apps/blog",
+      "root": "apps/weblog",
       "entryFile": "main",
-      "sourceRoot": "apps/blog/src",
+      "sourceRoot": "apps/weblog/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/blog/tsconfig.app.json"
+        "tsConfigPath": "apps/weblog/tsconfig.app.json"
       }
     },
     "database-type-orm": {
@@ -26,6 +26,15 @@
       "sourceRoot": "libs/database-type-orm/src",
       "compilerOptions": {
         "tsConfigPath": "libs/database-type-orm/tsconfig.lib.json"
+      }
+    },
+    "authorization": {
+      "type": "library",
+      "root": "libs/authorization",
+      "entryFile": "index",
+      "sourceRoot": "libs/authorization/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/authorization/tsconfig.lib.json"
       }
     }
   }
