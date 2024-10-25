@@ -5,8 +5,3 @@ export enum CommonStatus {
     NOT_VERIFY = 2,
     REJECT = 3,
 }
-
-export enum Role {
-    User = 'user',
-    Admin = 'admin',
-  }

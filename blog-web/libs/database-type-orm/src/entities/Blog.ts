@@ -8,12 +8,15 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import User from './User';
+// import User from './User';
 
 @Entity('blog')
-export default class blog {
+export default class Blog {
   @PrimaryGeneratedColumn({ name: 'id', type: 'bigint', unsigned: true })
   id: number;
+
+  @Column({ name: 'email', type: 'varchar', length: 255, unique: true })
+  email: string;
 
   @Column({
     name: 'content',
@@ -37,12 +40,10 @@ export default class blog {
 
   // @OneToMany(() => Comment, (comment) => comment.post)
   // comments: Comment[]
-  @Column({ name: 'user_id', type: 'bigint', unsigned: true })
-  userId: number;
 
-  @ManyToOne(() => User, (user) => user.blogs)
-  @JoinColumn({ name: 'user_id' })
-  user: User;
+  // @ManyToOne(() => User, (user) => user.blogs)
+  // @JoinColumn({ name: 'user_id' })
+  // user: User;
 
   // @OneToMany(() => Like, (like) => like.post)
   // likes: Like[]

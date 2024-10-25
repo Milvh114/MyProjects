@@ -3,12 +3,11 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  OneToMany,
   // OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import blog from './Blog';
+// import Blog from './Blog';
 import { CommonStatus } from '../constants/enum';
 
 @Entity('user')
@@ -23,7 +22,7 @@ export default class User {
     name: 'password',
     type: 'varchar',
     length: 100,
-    select: true,
+    select: false,
     nullable: true,
   })
   password: string;
@@ -67,6 +66,6 @@ export default class User {
   @UpdateDateColumn({ name: 'updated_at', type: 'datetime' })
   updatedAt: string;
 
-  @OneToMany(() => blog, (blog) => blog.user)
-  blogs: blog[];
+  // @OneToMany(() => Blog, (blog) => blog.user)
+  // blogs: Blog[];
 }

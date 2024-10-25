@@ -1,5 +1,5 @@
-import blog from './Blog';
+import Blog from './Blog';
 import User from './User';
 
-export const DefaultEntities = [User, blog];
+export const DefaultEntities = [User, Blog];
 export default DefaultEntities;
