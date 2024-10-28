@@ -15,6 +15,7 @@ services:
       - SERVER_PORT="3000"
       - JWT_SECRET='secret'
       - MYSQL_PORT=3306
+      - MYSQL_PASS=Minh123
     volumes:
       - ./apps/weblog/src:/usr/src/app/apps/weblog/src
     networks:
