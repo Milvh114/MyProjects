@@ -71,13 +71,13 @@ export class BlogService {
     return `This action removes a #${id} blog`;
   }
 
-  async upload(fileName: string, fileMimeType: string, file: Buffer): Promise<string> {
+  async upload(fileOriginalName: string, fileMimeType: string, file: Buffer): Promise<string> {
 
     try {
       await this.s3Client.send(
         new PutObjectCommand({
           Bucket: 'weblog-app',
-          Key: fileName,
+          Key: fileOriginalName,
           Body: file,
           ContentType: fileMimeType,
         })

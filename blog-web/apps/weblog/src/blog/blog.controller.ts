@@ -56,6 +56,6 @@ export class BlogController {
     })
   ) file: Express.Multer.File) {
     console.log('File: ', file);
-    return this.blogService.upload(file.fieldname, file.mimetype, file.buffer);
+    return this.blogService.upload(file.originalname, file.mimetype, file.buffer);
   }
 }
