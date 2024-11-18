@@ -8,7 +8,6 @@ import { RolesGuard } from '../auth/guard/roles.guard';
 import { IsAdmin } from '../auth/decorators/isAdmin.decorator';
 import { AdminGuard } from '../auth/guard/admin.guard';
 
-
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -26,7 +25,7 @@ export class UserController {
   @IsAdmin(1)
   @Get('profile')
   getProfile(@Req() req) {
-    console.log(req.user.sub)
+    // console.log(req.user)
     return req.user;
   }
   // @Get()

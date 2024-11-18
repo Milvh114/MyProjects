@@ -1,11 +1,21 @@
-import { ForbiddenException, Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import Blog from '@app/database-type-orm/entities/Blog';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BlogDto } from './dto/index';
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+require('dotenv').config();
+
 
 @Injectable()
 export class BlogService {
+  private readonly s3Client = new S3Client({
+    region: process.env.AWS_S3_REGION,
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    },
+  });
   constructor(
     @InjectRepository(Blog)
     private blogRepo: Repository<Blog>,
@@ -59,6 +69,24 @@ export class BlogService {
     }
     this.blogRepo.remove(blog);
     return `This action removes a #${id} blog`;
+  }
+
+  async upload(fileName: string, fileMimeType: string, file: Buffer): Promise<string> {
+
+    try {
+      await this.s3Client.send(
+        new PutObjectCommand({
+          Bucket: 'weblog-app',
+          Key: fileName,
+          Body: file,
+          ContentType: fileMimeType,
+        })
+      )
+      return `This action removes a #${file} blog`;
+    } catch (err) {
+      console.error(err);
+      throw new InternalServerErrorException('Failed to upload file');
+    }
   }
 
   entityToAuthDto(blog: Blog) {
